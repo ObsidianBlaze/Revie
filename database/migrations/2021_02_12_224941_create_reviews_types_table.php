@@ -13,8 +13,8 @@ class CreateReviewsTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviews__types', function (Blueprint $table) {
-            $table->id();
+        Schema::create('reviews_types', function (Blueprint $table) {
+            $table->id()->unique();
             $table->string('review_type');
             $table->timestamps();
         });
