@@ -18,11 +18,13 @@ class CreateReviewsTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('apartment_id')->unsigned();
             $table->bigInteger('helpful')->default(0);
+            $table->bigInteger('reviews_type_id')->unsigned();
             $table->string('video')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('reviews_type_id')->references('id')->on('reviews_types')->onDelete('cascade')->onUpdate('cascade');
 
         });
     }
@@ -31,6 +33,7 @@ class CreateReviewsTable extends Migration
 //helpful default 0
 //Videos(nullable)
 //Images(nullable)
+//Reviews_Type
 
     /**
      * Reverse the migrations.
