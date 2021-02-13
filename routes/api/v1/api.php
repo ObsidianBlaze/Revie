@@ -18,8 +18,13 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-//Customers
+//Users
 Route::prefix('/user')->group(function () {
-    //Registering a user.
-    Route::post('/detail', 'api\v1\LoginController@login');
+
+//Registering a user.
+Route::post('/register', 'api\v1\UserActivityController@register');
+
+//Logging in a user.
+Route::post('/login', 'api\v1\UserActivityController@login');
+
 });
