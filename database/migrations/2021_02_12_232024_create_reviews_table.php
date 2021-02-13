@@ -16,14 +16,14 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id()->unique();
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('apartment_id')->unsigned();
+            $table->bigInteger('apartment_id')->nullable()->unsigned();
             $table->bigInteger('reviews_type_id')->unsigned();
             $table->bigInteger('helpful')->default(0);
             $table->string('video')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-//            $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('reviews_type_id')->references('id')->on('reviews_types')->onDelete('cascade')->onUpdate('cascade');
 
         });
