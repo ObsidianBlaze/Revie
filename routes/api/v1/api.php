@@ -28,3 +28,11 @@ Route::post('/register', 'api\v1\UserActivityController@register');
 Route::post('/login', 'api\v1\UserActivityController@login');
 
 });
+
+//Apartment
+Route::prefix('/apartment')->group(function () {
+
+//Creating an address for the apartment..
+    Route::post('/create', 'api\v1\ApartmentController@create');
+
+});

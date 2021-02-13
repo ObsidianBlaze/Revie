@@ -72,7 +72,7 @@ class UserActivityController extends Controller
         ]);
 
         $error_message = ['RULES' => [
-            'name' => 'last name can not be empty, must be a string, can not be less than 2 characters',
+            'name' => 'name can not be empty, must be a string, can not be less than 2 characters',
             'email' => 'email can not be empty, must be a valid email',
             'password' => 'password can not be empty, must be a string, minimum of eight characters.',
         ]];

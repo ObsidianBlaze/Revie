@@ -5,6 +5,42 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/api/v1/apartment/create": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Creating an address for an apartment",
+                "description": "Credentials: address",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "address"
+                                ],
+                                "properties": {
+                                    "address": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "15, unity road, Ikorodu Lagos."
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response"
+                    }
+                }
+            }
+        },
         "/api/v1/user/register": {
             "post": {
                 "tags": [
