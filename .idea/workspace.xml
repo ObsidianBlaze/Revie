@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="248" selection-start-line="248" selection-end-line="248" />
+            <state relative-caret-position="-104">
+              <caret line="241" column="17" selection-start-line="241" selection-start-column="17" selection-end-line="241" selection-end-column="17" />
               <folding>
                 <element signature="e#10#859#0#PHP" />
                 <element signature="e#784#1562#0#PHP" />
@@ -31,10 +31,15 @@
                 <element signature="e#4546#5439#0#PHP" />
                 <element signature="e#5458#6608#0#PHP" />
                 <element signature="e#4569#4605#0#PHP" expanded="true" />
+                <element signature="e#250#2783#0#PHP" />
+                <element signature="e#3824#4639#0#PHP" />
+                <element signature="e#5613#7710#0#PHP" />
                 <element signature="e#8219#8266#0#PHP" />
                 <element signature="e#9342#9800#0#PHP" />
+                <element signature="e#10476#10524#0#PHP" />
                 <element signature="e#12729#13249#0#PHP" />
                 <element signature="e#14190#17076#0#PHP" />
+                <element signature="e#18751#18795#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -43,26 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api/v1/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_13_164750_create_reviews_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="30" selection-start-line="15" selection-end-line="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_13_164531_create_reviews_types_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="20" selection-start-line="15" selection-end-line="20" />
+            <state relative-caret-position="304">
+              <caret line="36" column="67" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -369,7 +356,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49053000" />
+    <option name="totallyTimeSpent" value="49412000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -382,7 +369,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
@@ -616,15 +602,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api/v1/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        <state relative-caret-position="304">
+          <caret line="36" column="67" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="248" selection-start-line="248" selection-end-line="248" />
+        <state relative-caret-position="-104">
+          <caret line="241" column="17" selection-start-line="241" selection-start-column="17" selection-end-line="241" selection-end-column="17" />
           <folding>
             <element signature="e#10#859#0#PHP" />
             <element signature="e#784#1562#0#PHP" />
@@ -635,10 +621,15 @@
             <element signature="e#4546#5439#0#PHP" />
             <element signature="e#5458#6608#0#PHP" />
             <element signature="e#4569#4605#0#PHP" expanded="true" />
+            <element signature="e#250#2783#0#PHP" />
+            <element signature="e#3824#4639#0#PHP" />
+            <element signature="e#5613#7710#0#PHP" />
             <element signature="e#8219#8266#0#PHP" />
             <element signature="e#9342#9800#0#PHP" />
+            <element signature="e#10476#10524#0#PHP" />
             <element signature="e#12729#13249#0#PHP" />
             <element signature="e#14190#17076#0#PHP" />
+            <element signature="e#18751#18795#0#PHP" />
           </folding>
         </state>
       </provider>
