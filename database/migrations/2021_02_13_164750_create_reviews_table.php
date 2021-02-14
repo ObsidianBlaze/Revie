@@ -17,6 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id()->unique();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('apartment_id')->unsigned();
+            $table->string('comment');
             $table->bigInteger('reviews_type_id')->nullable()->unsigned();
             $table->bigInteger('helpful')->default(0);
             $table->string('video')->nullable();

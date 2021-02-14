@@ -22,10 +22,13 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/user')->group(function () {
 
 //Registering a user.
-Route::post('/register', 'api\v1\UserActivityController@register');
+    Route::post('/register', 'api\v1\UserActivityController@register');
 
 //Logging in a user.
-Route::post('/login', 'api\v1\UserActivityController@login');
+    Route::post('/login', 'api\v1\UserActivityController@login');
+
+//Reviewing.
+    Route::post('/review', 'api\v1\UserActivityController@review');
 
 });
 
