@@ -33,6 +33,10 @@ Route::prefix('/user')->group(function () {
     //Sorting by count
     Route::get('/count', 'api\v1\UserActivityController@helpfulCount')->name('count');
 
+    //Sorting by most recent
+    Route::get('/recent', 'api\v1\UserActivityController@mostRecent')->name('most_recent');
+
+
 });
 
 //Apartment

@@ -231,7 +231,6 @@
  */
 
 //Ordering review by count
-//view single review
 /**
  * @OA\Get(
  * path="/api/v1/user/count",
@@ -240,7 +239,26 @@
  * operationId="authLogin",
  * tags={"Counts"},
  * @OA\RequestBody(
- *    required=true,
+ *    required="",
+ *    description="",
+ * ),
+ * @OA\Response(
+ *    response=401,
+ *    description="Wrong credentials response",
+ *     )
+ * )
+ */
+
+//Ordering by most recent
+/**
+ * @OA\Get(
+ * path="/api/v1/user/recent",
+ * summary="Orders the reviews by the most recent.",
+ * description="Getting a reviews based on most recent.",
+ * operationId="authLogin",
+ * tags={"Counts"},
+ * @OA\RequestBody(
+ *    required="",
  *    description="",
  * ),
  * @OA\Response(
@@ -558,6 +576,16 @@ class UserActivityController extends Controller
 
         //Response of the order
         return response()->json([$count, "error" => false], 200);
+
+    }
+
+    //Sorting by most recent.
+    public function mostRecent(){
+        //Sorting the review by most recent using descending.
+        $review_order = DB::table('reviews')->select('*')->orderBy('id', 'desc')->get();
+
+        //Response of the order
+        return response()->json([$review_order, "error" => false], 200);
 
     }
 
