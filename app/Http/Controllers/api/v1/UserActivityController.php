@@ -267,7 +267,7 @@ class UserActivityController extends Controller
         $user = new User();
 
         //Checking if a user account already exists.
-        if ($user::where('email', $request->email)->first()) {
+        if ($user::where('email', $request->email)) {
 
             //Response if the users already exists.
             return response()->json(
