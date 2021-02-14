@@ -28,7 +28,7 @@ Route::prefix('/user')->group(function () {
     Route::post('/login', 'api\v1\UserActivityController@login');
 
 //Reviewing.
-    Route::post('/review', 'api\v1\UserActivityController@review');
+    Route::post('/review', 'api\v1\UserActivityController@review')->middleware('auth:api');
 
 });
 
@@ -43,3 +43,13 @@ Route::prefix('/apartment')->group(function () {
 //Review Type
 //Creating an address for the apartment..
 Route::post('/create', 'api\v1\ReviewTypeController@createReviewType');
+
+//Reviews
+Route::prefix('/review')->group(function () {
+
+//Checking all reviews...
+    Route::get('/all', 'api\v1\UserActivityController@getAllReview');
+    //Creating an address for the apartment..
+    Route::get('/{id}', 'api\v1\UserActivityController@getSingleReview');
+
+});

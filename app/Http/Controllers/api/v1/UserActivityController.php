@@ -80,6 +80,62 @@
  * )
  */
 
+//Getting all the reviews
+/**
+ * @OA\Get(
+ * path="/api/v1/review/all",
+ * summary="Get all reviews records",
+ * description="shows all records of available reviews",
+ * operationId="getreviews",
+ * tags={"Reviews"},
+ * @OA\Response(
+ *    response=200,
+ *    description="success",
+ *    @OA\JsonContent(
+ *       @OA\Property(property="reviews", type="object", format="text"),
+ *    ),
+ *    @OA\Response(
+ *         response=200,
+ *         description="Successful operation",
+ *         @OA\JsonContent(ref="#/components/schemas/ReviewResource")
+ *      ),
+ * )
+ * )
+ */
+
+//view single review
+/**
+ * @OA\Get(
+ *    path="/api/v1/review/{id}",
+ *    operationId="getReview",
+ *    tags={"Reviews"},
+ *    summary="Get a single review record",
+ *    description="Returns detailed information about a review",
+ *      @OA\Parameter(
+ *          name="id",
+ *          description="Review id",
+ *          required=true,
+ *          in="path",
+ *          @OA\Schema(
+ *              type="integer"
+ *          )
+ *      ),
+ *      @OA\Response(
+ *          response=200,
+ *          description="Successful operation",
+ *          @OA\JsonContent(ref="#/components/schemas/ReviewResource")
+ *       ),
+ *      @OA\Response(
+ *          response=401,
+ *          description="Unauthenticated",
+ *      ),
+ *      @OA\Response(
+ *          response=403,
+ *          description="Forbidden"
+ *      )
+ *     )
+ */
+
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
@@ -221,5 +277,36 @@ class UserActivityController extends Controller
 
     }
 
+    //Getting all review
+    public function getAllReview(){
+        //Storing all the reviews into a variable.
+        $reviews = Reviews::all();
+        //Checking for reviews
+        if ($reviews)
+            //returning all the reviews.
+            return response()->json(["reviews" => $reviews], 200);
+        //Response if no product is on the table.
+        else {
+            //response if no reviews.
+            return response()->json(["reviews" => "No reviews on the database"], 404);
+
+        }
+
+    }
+
+    //Getting a single review
+    public function getSingleReview($id)
+    {
+        //Checking if an id exist
+        $review = Reviews::find($id);
+        if ($review) {
+            //Response if review exists.
+            return response()->json(["review" => $review], 200);
+        } else {
+            //Response if the review does not exist in the database
+            return response()->json([["message" => "review does not exist"], ["error" => true]], 404);
+        }
+
+    }
 
 }

@@ -12,7 +12,7 @@
  *    description="Pass user credentials",
  *    @OA\JsonContent(
  *       required={"review_type"},
- *       @OA\Property(property="review_type", type="string", format="text", example="Landlord"),
+ *       @OA\Property(property="review_type", type="string", format="text", example="Landlord or Environment, quality of apartment"),
  *    ),
  * ),
  * @OA\Response(

@@ -67,7 +67,7 @@
                                     "review_type": {
                                         "type": "string",
                                         "format": "text",
-                                        "example": "Landlord"
+                                        "example": "Landlord or Environment, quality of apartment"
                                     }
                                 },
                                 "type": "object"
@@ -236,6 +236,34 @@
                                         "message": {
                                             "type": "string",
                                             "example": "Not authorized"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/review/all": {
+            "get": {
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Get all reviews records",
+                "description": "shows all records of available reviews",
+                "operationId": "getreviews",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "reviews": {
+                                            "type": "object",
+                                            "format": "text"
                                         }
                                     },
                                     "type": "object"
