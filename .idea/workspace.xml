@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05097e17-236e-47f9-8a6e-e663087a1350" name="Default Changelist" comment="" />
+    <list default="true" id="05097e17-236e-47f9-8a6e-e663087a1350" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-825">
-              <caret line="213" selection-start-line="213" selection-end-line="213" />
+            <state relative-caret-position="355">
+              <caret line="269" column="59" lean-forward="true" selection-start-line="269" selection-start-column="50" selection-end-line="269" selection-end-column="59" />
               <folding>
                 <element signature="e#10#859#0#PHP" />
                 <element signature="e#784#1562#0#PHP" />
@@ -44,6 +47,18 @@
                 <element signature="e#12729#13249#0#PHP" />
                 <element signature="e#14190#17076#0#PHP" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="567">
+                <caret line="41" selection-start-line="41" selection-end-line="41" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -147,9 +162,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/api/v1/ReviewTypeController.php" />
         <option value="$PROJECT_DIR$/app/Reviews.php" />
         <option value="$PROJECT_DIR$/routes/api/v1/api.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/config/database.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -390,7 +406,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42852000" />
+    <option name="totallyTimeSpent" value="43851000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,12 +423,12 @@
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32872504" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -606,8 +622,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-825">
-          <caret line="213" selection-start-line="213" selection-end-line="213" />
+        <state relative-caret-position="355">
+          <caret line="269" column="59" lean-forward="true" selection-start-line="269" selection-start-column="50" selection-end-line="269" selection-end-column="59" />
           <folding>
             <element signature="e#10#859#0#PHP" />
             <element signature="e#784#1562#0#PHP" />
@@ -622,6 +638,16 @@
             <element signature="e#12729#13249#0#PHP" />
             <element signature="e#14190#17076#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="567">
+            <caret line="41" selection-start-line="41" selection-end-line="41" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
