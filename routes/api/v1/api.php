@@ -22,10 +22,10 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/user')->group(function () {
 
 //Registering a user.
-    Route::post('/register', 'api\v1\UserActivityController@register');
+    Route::post('/register', 'api\v1\UserActivityController@register')->name('register');
 
 //Logging in a user.
-    Route::post('/login', 'api\v1\UserActivityController@login');
+    Route::post('/login', 'api\v1\UserActivityController@login')->name('login');
 
 //Reviewing.
     Route::post('/review', 'api\v1\UserActivityController@review')->middleware('auth:api');
@@ -54,9 +54,9 @@ Route::prefix('/review')->group(function () {
     //Marking a review helpful
     Route::post('/helpful/{id}', 'api\v1\UserActivityController@markHelpful');
     //Deleting a review
-    Route::delete('/delete/{id}', 'api\v1\UserActivityController@deleteReview');
+    Route::delete('/delete/{id}', 'api\v1\UserActivityController@deleteReview')->middleware('auth:api');
     //Updating a review
-    Route::put('/update/{id}', 'api\v1\UserActivityController@updateReview');
+    Route::put('/update/{id}', 'api\v1\UserActivityController@updateReview')->middleware('auth:api');
 
 
 });
