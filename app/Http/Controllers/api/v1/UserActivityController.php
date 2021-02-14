@@ -157,6 +157,43 @@
  * )
  */
 
+//Deleting a review
+/**
+ * @OA\Delete(
+ *      path="/api/v1/product/delete/{id}",
+ *      operationId="deleteProduct",
+ *      tags={"Products"},
+ *      summary="Delete existing product",
+ *      description="Deletes a record and returns no content",
+ *      @OA\Parameter(
+ *          name="id",
+ *          description="Product id",
+ *          required=true,
+ *          in="path",
+ *          @OA\Schema(
+ *              type="integer"
+ *          )
+ *      ),
+ *      @OA\Response(
+ *          response=204,
+ *          description="Successful operation",
+ *          @OA\JsonContent()
+ *       ),
+ *      @OA\Response(
+ *          response=401,
+ *          description="Unauthenticated",
+ *      ),
+ *      @OA\Response(
+ *          response=403,
+ *          description="Forbidden"
+ *      ),
+ *      @OA\Response(
+ *          response=404,
+ *          description="Resource Not Found"
+ *      )
+ * )
+ */
+
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
@@ -330,6 +367,7 @@ class UserActivityController extends Controller
 
     }
 
+    //Marking a review helpful
     public function markHelpful(Request $request, $id){
         //Validating and storing a users data in a variable
         $review = Validator::make($request->all(), [
@@ -361,8 +399,25 @@ class UserActivityController extends Controller
             return response()->json(["message" => "review updated and marked as helpful"], 200);
         } else {
             //Response if the review does not exist in the database
-            return response()->json([["message" => "review does not exist"], ["error" => true]], 404);
+            return response()->json(["message" => "review does not exist", "error" => true], 404);
         }
+    }
+
+    //Deleting a review
+    public function deleteReview($id)
+    {
+        //Checking if an id exist
+        $review = Reviews::findOrFail($id);
+
+        //Checking for the Review, deleting and sending a response.
+        if ($review) {
+            $review->delete($id);
+            return response()->json(["message" => "Review deleted", "error" => false], 200);
+        } //Response if no review was found
+        else {
+            return response()->json(["message" => "Review does not exist", "error" => true], 404);
+        }
+
     }
 
 }

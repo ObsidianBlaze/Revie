@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05097e17-236e-47f9-8a6e-e663087a1350" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reviews.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api/v1/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/v1/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/api-docs/api-docs.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/api-docs/api-docs.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,22 +19,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/api/v1/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="56" column="3" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
+            <state relative-caret-position="484">
+              <caret line="56" column="77" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="145" column="81" selection-start-line="145" selection-start-column="81" selection-end-line="145" selection-end-column="81" />
+            <state relative-caret-position="212">
+              <caret line="369" column="32" selection-start-line="369" selection-start-column="20" selection-end-line="369" selection-end-column="32" />
               <folding>
+                <element signature="e#10#859#0#PHP" />
+                <element signature="e#784#1562#0#PHP" />
+                <element signature="e#1596#2333#0#PHP" />
                 <element signature="e#2520#3082#0#PHP" />
+                <element signature="e#3117#3899#0#PHP" />
+                <element signature="e#3802#4720#0#PHP" />
+                <element signature="e#4569#4605#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,9 +102,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/api/v1/ApartmentController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_02_13_164750_create_reviews_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/api/v1/ReviewTypeController.php" />
-        <option value="$PROJECT_DIR$/routes/api/v1/api.php" />
         <option value="$PROJECT_DIR$/app/Reviews.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php" />
+        <option value="$PROJECT_DIR$/routes/api/v1/api.php" />
       </list>
     </option>
   </component>
@@ -372,7 +376,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34341000" />
+    <option name="totallyTimeSpent" value="35407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -380,12 +384,12 @@
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32872504" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -549,20 +553,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api/v1/api.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="56" column="3" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
+        <state relative-caret-position="212">
+          <caret line="369" column="32" selection-start-line="369" selection-start-column="20" selection-end-line="369" selection-end-column="32" />
+          <folding>
+            <element signature="e#10#859#0#PHP" />
+            <element signature="e#784#1562#0#PHP" />
+            <element signature="e#1596#2333#0#PHP" />
+            <element signature="e#2520#3082#0#PHP" />
+            <element signature="e#3117#3899#0#PHP" />
+            <element signature="e#3802#4720#0#PHP" />
+            <element signature="e#4569#4605#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php">
+    <entry file="file://$PROJECT_DIR$/routes/api/v1/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="145" column="81" selection-start-line="145" selection-start-column="81" selection-end-line="145" selection-end-column="81" />
-          <folding>
-            <element signature="e#2520#3082#0#PHP" />
-          </folding>
+        <state relative-caret-position="484">
+          <caret line="56" column="77" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
         </state>
       </provider>
     </entry>

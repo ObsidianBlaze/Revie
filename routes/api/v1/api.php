@@ -53,5 +53,7 @@ Route::prefix('/review')->group(function () {
     Route::get('/{id}', 'api\v1\UserActivityController@getSingleReview');
     //Marking a review helpful
     Route::post('/helpful/{id}', 'api\v1\UserActivityController@markHelpful');
+    //Deleting a review
+    Route::delete('/delete/{id}', 'api\v1\UserActivityController@deleteReview');
 
 });
