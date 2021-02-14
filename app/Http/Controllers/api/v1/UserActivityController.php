@@ -70,8 +70,12 @@
  *    ),
  * ),
  * @OA\Response(
- *    response=422,
+ *    response=401,
  *    description="Wrong credentials response",
+ *    @OA\JsonContent(
+ *       @OA\Property(property="message", type="string", example="Not authorized"),
+ *    )
+ *
  *     )
  * )
  */
@@ -79,6 +83,7 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Reviews;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -170,13 +175,30 @@ class UserActivityController extends Controller
         $error_message = ['RULES' => [
             'user_id' => 'can not be empty',
             'apartment_id' => 'can not be empty',
-            'comment' => 'comment can not be empty, must be a stringl',
+            'comment' => 'comment can not be empty, must be a string',
         ]];
 
         //Returning an error when the user provides wrong data.
         if ($review->fails())
             //Response if the users input does not match the validation.
             return response()->json(["message" => "Review not made", $error_message, "error" => true], 400);
+
+        //Creating an instance of the reviews table.
+        $reviews = new Reviews();
+
+        //populating the columns of the reviews table.
+        $reviews->user_id = $request->user_id;
+        $reviews->apartment_id = $request->apartment_id;
+        $reviews->comment = $request->comment;
+        $reviews->reviews_type_id = $request->reviews_type_id;
+        $reviews->video = $request->video;
+        $reviews->image = $request->image;
+
+        //Sending the validated data to the database.
+        $reviews->save();
+
+        //Response when the user palces a review correctly.
+        return response(['message' => "Review made successfully.", 'error' => false]);
 
     }
 

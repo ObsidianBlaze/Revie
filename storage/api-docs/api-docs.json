@@ -166,7 +166,7 @@
                     }
                 },
                 "responses": {
-                    "422": {
+                    "401": {
                         "description": "Wrong credentials response",
                         "content": {
                             "application/json": {
@@ -191,7 +191,7 @@
                     "auth"
                 ],
                 "summary": "Review an apartment",
-                "description": "Credentials: user_id, apartment_id, reviews_type_id, video, image",
+                "description": "Credentials: user_id, apartment_id, comment, reviews_type_id, video, image",
                 "operationId": "authLogin",
                 "requestBody": {
                     "description": "Pass user credentials",
@@ -202,23 +202,23 @@
                                 "required": [
                                     "user_id",
                                     "apartment_id",
-                                    "password"
+                                    "comment"
                                 ],
                                 "properties": {
-                                    "name": {
+                                    "user_id": {
+                                        "type": "integer",
+                                        "format": "number",
+                                        "example": "1"
+                                    },
+                                    "apartment_id": {
+                                        "type": "integer",
+                                        "format": "number",
+                                        "example": "1"
+                                    },
+                                    "comment": {
                                         "type": "string",
                                         "format": "text",
-                                        "example": "John"
-                                    },
-                                    "email": {
-                                        "type": "string",
-                                        "format": "email",
-                                        "example": "user1@mail.com"
-                                    },
-                                    "password": {
-                                        "type": "string",
-                                        "format": "password",
-                                        "example": "PassWord12345"
+                                        "example": "This was a lovely place to stay"
                                     }
                                 },
                                 "type": "object"
@@ -227,8 +227,21 @@
                     }
                 },
                 "responses": {
-                    "422": {
-                        "description": "Wrong credentials response"
+                    "401": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Not authorized"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }
