@@ -28,7 +28,7 @@ Route::prefix('/user')->group(function () {
     Route::post('/login', 'api\v1\UserActivityController@login')->name('login');
 
 //Reviewing.
-    Route::post('/review', 'api\v1\UserActivityController@review')->middleware('auth:api');
+    Route::post('/review', 'api\v1\UserActivityController@review')->middleware('auth:api')->name('review_apartment');
 
 });
 
@@ -36,27 +36,27 @@ Route::prefix('/user')->group(function () {
 Route::prefix('/apartment')->group(function () {
 
 //Creating an address for the apartment..
-    Route::post('/create', 'api\v1\ApartmentController@create');
+    Route::post('/create', 'api\v1\ApartmentController@create')->name('create_apartment');
 
 });
 
 //Review Type
 //Creating an address for the apartment..
-Route::post('/create', 'api\v1\ReviewTypeController@createReviewType');
+Route::post('/create', 'api\v1\ReviewTypeController@createReviewType')->name('create_review_type');
 
 //Reviews
 Route::prefix('/review')->group(function () {
 
 //Checking all reviews...
-    Route::get('/all', 'api\v1\UserActivityController@getAllReview');
+    Route::get('/all', 'api\v1\UserActivityController@getAllReview')->name('get_reviews');
     //Getting a single review
-    Route::get('/{id}', 'api\v1\UserActivityController@getSingleReview');
+    Route::get('/{id}', 'api\v1\UserActivityController@getSingleReview')->name('get_single_review');
     //Marking a review helpful
-    Route::post('/helpful/{id}', 'api\v1\UserActivityController@markHelpful');
+    Route::post('/helpful/{id}', 'api\v1\UserActivityController@markHelpful')->name('mark_helpful');
     //Deleting a review
-    Route::delete('/delete/{id}', 'api\v1\UserActivityController@deleteReview')->middleware('auth:api');
+    Route::delete('/delete/{id}', 'api\v1\UserActivityController@deleteReview')->middleware('auth:api')->name('delete_review');
     //Updating a review
-    Route::put('/update/{id}', 'api\v1\UserActivityController@updateReview')->middleware('auth:api');
+    Route::put('/update/{id}', 'api\v1\UserActivityController@updateReview')->middleware('auth:api')->name('update_review');
 
 
 });
