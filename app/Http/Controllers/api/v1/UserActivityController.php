@@ -186,13 +186,32 @@ class UserActivityController extends Controller
         //Creating an instance of the reviews table.
         $reviews = new Reviews();
 
+        $imageName = "";
+        $videoName = "";
+
+//Processing the image and sending to the database.
+        if ($request->image != null) {
+            //Getting the image and the extension of the image from the user
+            $imageName = time() . '.' . $request->image->extension();
+            //Moving the image to the folder in the project
+            $request->image->move(public_path('res/img/'), $imageName);
+        }
+//Processing the video and sending to the database.
+        if($request->video != null){
+            //Getting the video and the extension of the image from the user
+            $videoName = time() . '.' . $request->video->extension();
+            //Moving the video to the folder in the project
+            $request->video->move(public_path('res/vid/'), $videoName);
+        }
+
+
         //populating the columns of the reviews table.
         $reviews->user_id = $request->user_id;
         $reviews->apartment_id = $request->apartment_id;
         $reviews->comment = $request->comment;
         $reviews->reviews_type_id = $request->reviews_type_id;
-        $reviews->video = $request->video;
-        $reviews->image = $request->image;
+        $reviews->video = $videoName;
+        $reviews->image = $imageName;
 
         //Sending the validated data to the database.
         $reviews->save();
