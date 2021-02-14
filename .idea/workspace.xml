@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05097e17-236e-47f9-8a6e-e663087a1350" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reviews.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/v1/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/v1/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,20 +19,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api/v1/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+            <state relative-caret-position="484">
+              <caret line="58" column="15" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="459" column="32" selection-start-line="459" selection-start-column="32" selection-end-line="459" selection-end-column="32" />
+            <state relative-caret-position="348">
+              <caret line="472" selection-start-line="472" selection-end-line="472" />
               <folding>
                 <element signature="e#10#859#0#PHP" />
                 <element signature="e#784#1562#0#PHP" />
@@ -108,8 +107,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2021_02_13_164750_create_reviews_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/api/v1/ReviewTypeController.php" />
         <option value="$PROJECT_DIR$/app/Reviews.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php" />
         <option value="$PROJECT_DIR$/routes/api/v1/api.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php" />
       </list>
     </option>
   </component>
@@ -314,6 +313,13 @@
             <path>
               <item name="Revie" type="b2602c69:ProjectViewProjectNode" />
               <item name="Revie" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Revie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Revie" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -381,7 +387,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37491000" />
+    <option name="totallyTimeSpent" value="38411000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -398,7 +404,7 @@
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -567,10 +573,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api/v1/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="58" column="15" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api/v1/UserActivityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="459" column="32" selection-start-line="459" selection-start-column="32" selection-end-line="459" selection-end-column="32" />
+        <state relative-caret-position="348">
+          <caret line="472" selection-start-line="472" selection-end-line="472" />
           <folding>
             <element signature="e#10#859#0#PHP" />
             <element signature="e#784#1562#0#PHP" />
@@ -584,13 +597,6 @@
             <element signature="e#9342#9800#0#PHP" />
             <element signature="e#12729#13249#0#PHP" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api/v1/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
         </state>
       </provider>
     </entry>

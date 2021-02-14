@@ -194,12 +194,15 @@
  * )
  */
 
+//Updating a review
+
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Reviews;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class UserActivityController extends Controller
@@ -451,6 +454,9 @@ class UserActivityController extends Controller
             }
 //            Logic if the user inserts a new photo
             else{
+                    //Deleting the old image from the folder
+                    File::delete('res/img/' . $reviews['image']);
+
                 //Getting the image and the extension of the image from the user
                 $imageName = time() . '.' . $request->image->extension();
                 //Moving the image to the folder in the project
@@ -462,6 +468,9 @@ class UserActivityController extends Controller
             }
             //Logic if the review has a new video.
             else{
+                    //Deleting the old video from the folder
+                    File::delete('res/vid/' . $reviews['video']);
+
                 //Getting the video and the extension of the image from the user
                 $videoName = time() . '.' . $request->video->extension();
                 //Moving the video to the folder in the project
