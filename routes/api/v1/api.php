@@ -55,5 +55,8 @@ Route::prefix('/review')->group(function () {
     Route::post('/helpful/{id}', 'api\v1\UserActivityController@markHelpful');
     //Deleting a review
     Route::delete('/delete/{id}', 'api\v1\UserActivityController@deleteReview');
+    //Updating a review
+    Route::put('/update/{id}', 'api\v1\UserActivityController@updateReview');
+
 
 });

@@ -420,4 +420,70 @@ class UserActivityController extends Controller
 
     }
 
+    //Updating a review
+    public function updateReview(Request $request, $id){
+        //Validating and storing a users data in a variable
+        $review = Validator::make($request->all(), [
+            'comment' => 'bail|required|string|min:2',
+            'video' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040',
+            'image' => 'image|max:2048',
+            //Note the bail keyword is used to terminate the validation if one of the fields does not meet the requirement.
+        ]);
+
+        $error_message = ['RULES' => [
+            'comment' => 'comment can not be empty, must be a string',
+        ]];
+
+        //Returning an error when the user provides wrong data.
+        if ($review->fails())
+            //Response if the users input does not match the validation.
+            return response()->json(["message" => "Review not updated", $error_message, "error" => true], 400);
+
+        //Checking if an id exist
+        $reviews = Reviews::find($id);
+
+        if ($reviews) {
+            $videoName = "";
+            $imageName = "";
+            //Logic to update photos and videos
+            if($request->image == null){
+                $imageName = $reviews['image'];
+            }
+//            Logic if the user inserts a new photo
+            else{
+                //Getting the image and the extension of the image from the user
+                $imageName = time() . '.' . $request->image->extension();
+                //Moving the image to the folder in the project
+                $request->image->move(public_path('res/img/'), $imageName);
+
+            }
+            if($request->video == null){
+                $videoName = $reviews['video'];
+            }
+            //Logic if the review has a new video.
+            else{
+                //Getting the video and the extension of the image from the user
+                $videoName = time() . '.' . $request->video->extension();
+                //Moving the video to the folder in the project
+                $request->video->move(public_path('res/vid/'), $videoName);
+
+            }
+            //Manipulating the users data to update
+            $reviews->fill([
+                'comment' => $request->comment,
+                'video' => $videoName,
+                'image' => $imageName,
+            ]);
+
+            $reviews->save();
+            //Response if review is updated.
+            return response()->json(["message" => "review updated"], 200);
+        } else {
+            //Response if the review does not exist in the database
+            return response()->json(["message" => "review does not exist", "error" => true], 404);
+        }
+
+
+    }
+
 }

@@ -9,7 +9,7 @@ class Reviews extends Model
     protected $table = 'reviews';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'helpful',
+        'helpful','comment','video','image',
     ];
 
 }
