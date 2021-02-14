@@ -49,7 +49,9 @@ Route::prefix('/review')->group(function () {
 
 //Checking all reviews...
     Route::get('/all', 'api\v1\UserActivityController@getAllReview');
-    //Creating an address for the apartment..
+    //Getting a single review
     Route::get('/{id}', 'api\v1\UserActivityController@getSingleReview');
+    //Marking a review helpful
+    Route::post('/helpful/{id}', 'api\v1\UserActivityController@markHelpful');
 
 });

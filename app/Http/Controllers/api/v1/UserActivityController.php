@@ -106,34 +106,55 @@
 //view single review
 /**
  * @OA\Get(
- *    path="/api/v1/review/{id}",
- *    operationId="getReview",
- *    tags={"Reviews"},
- *    summary="Get a single review record",
- *    description="Returns detailed information about a review",
- *      @OA\Parameter(
- *          name="id",
- *          description="Review id",
- *          required=true,
- *          in="path",
- *          @OA\Schema(
- *              type="integer"
- *          )
- *      ),
- *      @OA\Response(
- *          response=200,
- *          description="Successful operation",
- *          @OA\JsonContent(ref="#/components/schemas/ReviewResource")
- *       ),
- *      @OA\Response(
- *          response=401,
- *          description="Unauthenticated",
- *      ),
- *      @OA\Response(
- *          response=403,
- *          description="Forbidden"
- *      )
+ * path="/api/v1/review/{id}",
+ * summary="Getting a single review",
+ * description="Getting a review atributed to the id.",
+ * operationId="authLogin",
+ * tags={"Reviews"},
+ * @OA\RequestBody(
+ *    required=true,
+ *    description="Credentials: id",
+ *    @OA\JsonContent(
+ *       required={"id"},
+ *       @OA\Property(property="id", type="int", format="number", example="1"),
+ *    ),
+ * ),
+ * @OA\Response(
+ *    response=401,
+ *    description="Wrong credentials response",
+ *    @OA\JsonContent(
+ *       @OA\Property(property="message", type="string", example="Sorry, wrong ID. Please try again")
+ *        )
  *     )
+ * )
+ */
+
+//Marking a review helpful.
+/**
+ * @OA\Post(
+ * path="/api/v1/review/helpful/{id}",
+ * summary="Review an apartment",
+ * description="Credentials: id, checked",
+ * operationId="authLogin",
+ * tags={"auth"},
+ * @OA\RequestBody(
+ *    required=true,
+ *    description="Pass user credentials",
+ *    @OA\JsonContent(
+ *       required={"id","checked"},
+ *       @OA\Property(property="id", type="integer", format="number", example="1"),
+ *       @OA\Property(property="checked", type="text", format="string", example="yes"),
+ *    ),
+ * ),
+ * @OA\Response(
+ *    response=401,
+ *    description="Wrong credentials response",
+ *    @OA\JsonContent(
+ *       @OA\Property(property="message", type="string", example="Not authorized"),
+ *    )
+ *
+ *     )
+ * )
  */
 
 namespace App\Http\Controllers\api\v1;
@@ -307,6 +328,41 @@ class UserActivityController extends Controller
             return response()->json([["message" => "review does not exist"], ["error" => true]], 404);
         }
 
+    }
+
+    public function markHelpful(Request $request, $id){
+        //Validating and storing a users data in a variable
+        $review = Validator::make($request->all(), [
+            'checked' => 'bail|required|string',
+            //Note the bail keyword is used to terminate the validation if one of the fields does not meet the requirement.
+        ]);
+
+        $error_message = ['RULES' => [
+            'checked' => 'can not be empty',
+        ]];
+
+        //Returning an error when the user provides wrong data.
+        if ($review->fails())
+            //Response if the users input does not match the validation.
+            return response()->json(["message" => "Helpful review not made", $error_message, "error" => true], 400);
+
+        //Checking if an id exist
+        $review = Reviews::find($id);
+        $helpfulCounter = $review['helpful'];
+
+        if ($review) {
+            //Manipulating the users data to update
+            $review->fill([
+                'helpful' => $helpfulCounter + 1,
+            ]);
+
+            $review->save();
+            //Response if review is updated.
+            return response()->json(["message" => "review updated and marked as helpful"], 200);
+        } else {
+            //Response if the review does not exist in the database
+            return response()->json([["message" => "review does not exist"], ["error" => true]], 404);
+        }
     }
 
 }
