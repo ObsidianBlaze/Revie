@@ -461,10 +461,21 @@
                 "summary": "Orders the reviews by the amount of people that tagged it helful.",
                 "description": "Getting a reviews based on helpful count",
                 "operationId": "authLogin",
-                "requestBody": {
-                    "description": "",
-                    "required": true
-                },
+                "responses": {
+                    "401": {
+                        "description": "Wrong credentials response"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/recent": {
+            "get": {
+                "tags": [
+                    "Counts"
+                ],
+                "summary": "Orders the reviews by the most recent.",
+                "description": "Getting a reviews based on most recent.",
+                "operationId": "authLogin",
                 "responses": {
                     "401": {
                         "description": "Wrong credentials response"

@@ -238,10 +238,6 @@
  * description="Getting a reviews based on helpful count",
  * operationId="authLogin",
  * tags={"Counts"},
- * @OA\RequestBody(
- *    required="",
- *    description="",
- * ),
  * @OA\Response(
  *    response=401,
  *    description="Wrong credentials response",
@@ -257,10 +253,6 @@
  * description="Getting a reviews based on most recent.",
  * operationId="authLogin",
  * tags={"Counts"},
- * @OA\RequestBody(
- *    required="",
- *    description="",
- * ),
  * @OA\Response(
  *    response=401,
  *    description="Wrong credentials response",
