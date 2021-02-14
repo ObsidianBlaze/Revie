@@ -1,0 +1,43 @@
+USER
+        Schema::create('users', function (Blueprint $table) {
+            $table->id()->unique();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
+
+Apartment
+        Schema::create('apartments', function (Blueprint $table) {
+            $table->id()->unique();
+            $table->string('address');
+            $table->string('apartment_type');
+            $table->timestamps();
+        });
+
+Reviews Type
+        Schema::create('reviews_types', function (Blueprint $table) {
+            $table->id()->unique();
+            $table->string('review_type');
+            $table->timestamps();
+        });
+
+Reviews
+        Schema::create('reviews', function (Blueprint $table) {
+            $table->id()->unique();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('apartment_id')->unsigned();
+            $table->string('comment');
+            $table->bigInteger('reviews_type_id')->nullable()->unsigned();
+            $table->bigInteger('helpful')->default(0);
+            $table->string('video')->nullable();
+            $table->string('image')->nullable();
+            $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('reviews_type_id')->references('id')->on('reviews_types')->onDelete('cascade')->onUpdate('cascade');
+
+        });
