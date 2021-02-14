@@ -160,14 +160,14 @@
 //Deleting a review
 /**
  * @OA\Delete(
- *      path="/api/v1/product/delete/{id}",
- *      operationId="deleteProduct",
- *      tags={"Products"},
- *      summary="Delete existing product",
+ *      path="/api/v1/review/delete/{id}",
+ *      operationId="deleteReview",
+ *      tags={"Review"},
+ *      summary="Delete existing review",
  *      description="Deletes a record and returns no content",
  *      @OA\Parameter(
  *          name="id",
- *          description="Product id",
+ *          description="Review id",
  *          required=true,
  *          in="path",
  *          @OA\Schema(
