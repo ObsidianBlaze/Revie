@@ -195,6 +195,40 @@
  */
 
 //Updating a review
+/**
+ * @OA\Put(
+ *      path="/api/v1/review/update/{id}",
+ *      operationId="updateReview",
+ *      tags={"Reviews"},
+ *      summary="Update existing review",
+ *      description="Returns updated reviews data",
+ *      @OA\Parameter(
+ *          name="id",
+ *          description="Review id",
+ *          required=true,
+ *          in="path",
+ *          @OA\Schema(
+ *              type="integer"
+ *          )
+ *      ),
+ *      @OA\Response(
+ *          response=400,
+ *          description="Bad Request"
+ *      ),
+ *      @OA\Response(
+ *          response=401,
+ *          description="Unauthenticated",
+ *      ),
+ *      @OA\Response(
+ *          response=403,
+ *          description="Forbidden"
+ *      ),
+ *      @OA\Response(
+ *          response=404,
+ *          description="Resource Not Found"
+ *      )
+ * )
+ */
 
 namespace App\Http\Controllers\api\v1;
 

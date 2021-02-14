@@ -417,6 +417,41 @@
                     }
                 }
             }
+        },
+        "/api/v1/review/update/{id}": {
+            "put": {
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Update existing review",
+                "description": "Returns updated reviews data",
+                "operationId": "updateReview",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Review id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
         }
     },
     "security": [
