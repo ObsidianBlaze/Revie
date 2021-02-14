@@ -30,6 +30,9 @@ Route::prefix('/user')->group(function () {
 //Reviewing.
     Route::post('/review', 'api\v1\UserActivityController@review')->middleware('auth:api')->name('review_apartment');
 
+    //Sorting by count
+    Route::get('/count', 'api\v1\UserActivityController@helpfulCount')->name('count');
+
 });
 
 //Apartment

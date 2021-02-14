@@ -452,6 +452,25 @@
                     }
                 }
             }
+        },
+        "/api/v1/user/count": {
+            "get": {
+                "tags": [
+                    "Counts"
+                ],
+                "summary": "Orders the reviews by the amount of people that tagged it helful.",
+                "description": "Getting a reviews based on helpful count",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "",
+                    "required": true
+                },
+                "responses": {
+                    "401": {
+                        "description": "Wrong credentials response"
+                    }
+                }
+            }
         }
     },
     "security": [

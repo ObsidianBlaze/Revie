@@ -230,12 +230,34 @@
  * )
  */
 
+//Ordering review by count
+//view single review
+/**
+ * @OA\Get(
+ * path="/api/v1/user/count",
+ * summary="Orders the reviews by the amount of people that tagged it helful.",
+ * description="Getting a reviews based on helpful count",
+ * operationId="authLogin",
+ * tags={"Counts"},
+ * @OA\RequestBody(
+ *    required=true,
+ *    description="",
+ * ),
+ * @OA\Response(
+ *    response=401,
+ *    description="Wrong credentials response",
+ *     )
+ * )
+ */
+
+
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Reviews;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
@@ -526,6 +548,16 @@ class UserActivityController extends Controller
             return response()->json(["message" => "review does not exist", "error" => true], 404);
         }
 
+
+    }
+
+    //Sorting review by helpful count
+    public function helpfulCount(){
+        //Sorting the review by helfpul count using descending.
+        $count = DB::table('reviews')->select('*')->orderBy('helpful', 'desc')->get();
+
+        //Response of the order
+        return response()->json([$count, "error" => false], 200);
 
     }
 
