@@ -51,6 +51,31 @@
  * )
  */
 
+//Reviewing an apartment.
+/**
+ * @OA\Post(
+ * path="/api/v1/user/review",
+ * summary="Review an apartment",
+ * description="Credentials: user_id, apartment_id, reviews_type_id, video, image",
+ * operationId="authLogin",
+ * tags={"auth"},
+ * @OA\RequestBody(
+ *    required=true,
+ *    description="Pass user credentials",
+ *    @OA\JsonContent(
+ *       required={"user_id","apartment_id","password"},
+ *       @OA\Property(property="name", type="string", format="text", example="John"),
+ *       @OA\Property(property="email", type="string", format="email", example="user1@mail.com"),
+ *       @OA\Property(property="password", type="string", format="password", example="PassWord12345"),
+ *    ),
+ * ),
+ * @OA\Response(
+ *    response=422,
+ *    description="Wrong credentials response",
+ *     )
+ * )
+ */
+
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;

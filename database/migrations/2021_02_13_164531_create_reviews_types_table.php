@@ -19,9 +19,6 @@ class CreateReviewsTypesTable extends Migration
             $table->timestamps();
         });
     }
-//landlord
-//environment
-//quality
 
     /**
      * Reverse the migrations.
@@ -30,6 +27,6 @@ class CreateReviewsTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviews__types');
+        Schema::dropIfExists('reviews_types');
     }
 }

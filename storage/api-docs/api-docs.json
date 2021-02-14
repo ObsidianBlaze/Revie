@@ -27,6 +27,47 @@
                                         "type": "string",
                                         "format": "text",
                                         "example": "15, unity road, Ikorodu Lagos."
+                                    },
+                                    "apartment_type": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "2 bedroom flat"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response"
+                    }
+                }
+            }
+        },
+        "/api/v1/create": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Creating a review type",
+                "description": "Credentials: review_type",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "review_type"
+                                ],
+                                "properties": {
+                                    "review_type": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Landlord"
                                     }
                                 },
                                 "type": "object"
@@ -140,6 +181,54 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        },
+        "/api/v1/user/review": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Review an apartment",
+                "description": "Credentials: user_id, apartment_id, reviews_type_id, video, image",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_id",
+                                    "apartment_id",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "John"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response"
                     }
                 }
             }

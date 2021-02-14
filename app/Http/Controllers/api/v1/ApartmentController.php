@@ -13,6 +13,8 @@
  *    @OA\JsonContent(
  *       required={"address"},
  *       @OA\Property(property="address", type="string", format="text", example="15, unity road, Ikorodu Lagos."),
+ *       @OA\Property(property="apartment_type", type="string", format="text", example="2 bedroom flat"),
+ *
  *    ),
  * ),
  * @OA\Response(
@@ -36,11 +38,13 @@ class ApartmentController extends Controller
         //Validating and storing a users data in a variable
         $create = Validator::make($request->all(), [
             'address' => 'bail|required|string|min:5',
+            'apartment_type' => 'bail|required|string',
             //Note the bail keyword is used to terminate the validation if one of the fields does not meet the requirement.
         ]);
 
         $error_message = ['RULES' => [
             'address' => 'address can not be empty, must be a string, can not be less than 5 characters',
+            'apartment_type' => 'apartment type can not be empty, must be a string',
         ]];
 
         //Returning an error when the user provides wrong data.
@@ -53,6 +57,7 @@ class ApartmentController extends Controller
 
         //populating the columns of the apartments table.
         $apartment->address = $request->address;
+        $apartment->apartment_type = $request->apartment_type;
 
         $apartment->save();
 

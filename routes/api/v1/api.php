@@ -36,3 +36,7 @@ Route::prefix('/apartment')->group(function () {
     Route::post('/create', 'api\v1\ApartmentController@create');
 
 });
+
+//Review Type
+//Creating an address for the apartment..
+Route::post('/create', 'api\v1\ReviewTypeController@createReviewType');
