@@ -25,7 +25,7 @@ Route::prefix('/user')->group(function () {
     Route::post('/register', 'api\v1\UserActivityController@register')->name('register');
 
 //Logging in a user.
-    Route::post('/login', 'api\v1\UserActivityController@login');
+    Route::post('/login', 'api\v1\UserActivityController@login')->name('login');
 
 //Reviewing.
     Route::post('/review', 'api\v1\UserActivityController@review')->middleware('auth:api')->name('review_apartment');
